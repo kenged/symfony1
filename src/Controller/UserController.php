@@ -43,7 +43,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'user.updated_successfully');
+            $this->addFlash('success', 'Mise a jour des données appliqué');
 
             return $this->redirectToRoute('user_edit');
         }

@@ -9,7 +9,7 @@
     },
     "require": {
         "php": "^7.2.9",
-        "ext-pdo_sqlite": "*",
+        
         "composer/package-versions-deprecated": "^1.8",
         "doctrine/doctrine-bundle": "^1.12|^2.0",
         "doctrine/doctrine-migrations-bundle": "^3.0",
@@ -28,12 +28,13 @@
         "symfony/mailer": "^5.2",
         "symfony/monolog-bundle": "^3.1",
         "symfony/polyfill-intl-messageformatter": "^1.12",
+        "symfony/proxy-manager-bridge": "^5.2",
         "symfony/security-bundle": "^5.2",
         "symfony/string": "^5.2",
         "symfony/translation": "^5.2",
         "symfony/twig-pack": "^1.0",
         "symfony/validator": "^5.2",
-        "symfony/webpack-encore-bundle": "^1.4",
+        "symfony/webpack-encore-bundle": "^1.11",
         "symfony/yaml": "^5.2",
         "tgalopin/html-sanitizer-bundle": "^1.2",
         "twig/intl-extra": "^3.0",
@@ -45,7 +46,7 @@
         "symfony/browser-kit": "^5.2",
         "symfony/css-selector": "^5.2",
         "symfony/debug-bundle": "^5.2",
-        "symfony/maker-bundle": "^1.11",
+        "symfony/maker-bundle": "^1.30",
         "symfony/phpunit-bridge": "^5.2",
         "symfony/stopwatch": "^5.2",
         "symfony/web-profiler-bundle": "^5.2"

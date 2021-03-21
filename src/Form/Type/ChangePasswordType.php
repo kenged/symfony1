@@ -1,13 +1,6 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+
 
 namespace App\Form\Type;
 
@@ -36,7 +29,7 @@ class ChangePasswordType extends AbstractType
                 'constraints' => [
                     new UserPassword(),
                 ],
-                'label' => 'label.current_password',
+                'label' => 'Mot de passe actuel',
                 'attr' => [
                     'autocomplete' => 'off',
                 ],
@@ -51,10 +44,10 @@ class ChangePasswordType extends AbstractType
                     ]),
                 ],
                 'first_options' => [
-                    'label' => 'label.new_password',
+                    'label' => 'Nouveau mot de passe',
                 ],
                 'second_options' => [
-                    'label' => 'label.new_password_confirm',
+                    'label' => 'confirmer le nouveau mot de passe',
                 ],
             ])
         ;

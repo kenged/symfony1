@@ -14,9 +14,10 @@
             <p class="post-metadata">
                 <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
                 <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+                <span class="metadata"><i class="fa fa-difficulty"></i> {{ post.summary }}</span>
+
             </p>
 
-            <p>{{ post.summary }}</p>
 
             {{ include('blog/_post_tags.html.twig') }}
         </article>
@@ -52,8 +53,5 @@
 {% endblock %}
 
 {% block sidebar %}
-    {{ parent() }}
-
-    {{ show_source_code(_self) }}
-    {{ include('blog/_rss.html.twig') }}
+    
 {% endblock %}

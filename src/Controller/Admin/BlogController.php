@@ -93,7 +93,7 @@ class BlogController extends AbstractController
             // actions. They are deleted automatically from the session as soon
             // as they are accessed.
             // See https://symfony.com/doc/current/controller.html#flash-messages
-            $this->addFlash('success', 'post.created_successfully');
+            $this->addFlash('success', 'Créer avec succès');
 
             if ($form->get('saveAndCreateNew')->isClicked()) {
                 return $this->redirectToRoute('admin_post_new');
@@ -117,7 +117,7 @@ class BlogController extends AbstractController
     {
         // This security check can also be performed
         // using an annotation: @IsGranted("show", subject="post", message="Posts can only be shown to their authors.")
-        $this->denyAccessUnlessGranted(PostVoter::SHOW, $post, 'Posts can only be shown to their authors.');
+        $this->denyAccessUnlessGranted(PostVoter::SHOW, $post, 'admin seulement.');
 
         return $this->render('admin/blog/show.html.twig', [
             'post' => $post,
@@ -138,7 +138,7 @@ class BlogController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('success', 'post.updated_successfully');
+            $this->addFlash('success', 'Modifié avec succès');
 
             return $this->redirectToRoute('admin_post_edit', ['id' => $post->getId()]);
         }
@@ -170,7 +170,7 @@ class BlogController extends AbstractController
         $em->remove($post);
         $em->flush();
 
-        $this->addFlash('success', 'post.deleted_successfully');
+        $this->addFlash('success', 'Recette supprimé');
 
         return $this->redirectToRoute('admin_post_index');
     }

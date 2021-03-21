@@ -8,6 +8,7 @@
     <p class="post-metadata">
         <span class="metadata"><i class="fa fa-calendar"></i> {{ post.publishedAt|format_datetime('long', 'medium', '', 'UTC') }}</span>
         <span class="metadata"><i class="fa fa-user"></i> {{ post.author.fullName }}</span>
+        <span class="metadata"><i class="fa fa-difficulty"></i> {{ post.summary }}</span>
     </p>
 
     {{ post.content|markdown_to_html|sanitize_html }}
@@ -26,9 +27,9 @@
         {% else %}
             <p>
                 <a class="btn btn-success" href="{{ path('security_login', {'redirect_to': app.request.pathInfo}) }}">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'action.sign_in'|trans }}
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> {{ 'commenter' }}
                 </a>
-                {{ 'post.to_publish_a_comment'|trans }}
+                {{ 'Commenter' }}
             </p>
         {% endif %}
     </div>
@@ -53,7 +54,7 @@
         </div>
     {% else %}
         <div class="post-comment">
-            <p>{{ 'post.no_comments'|trans }}</p>
+            <p>{{ 'soyez le premier a commenter '}}</p>
         </div>
     {% endfor %}
 {% endblock %}
@@ -62,7 +63,7 @@
     {% if is_granted('edit', post) %}
         <div class="section">
             <a class="btn btn-lg btn-block btn-success" href="{{ path('admin_post_edit', {id: post.id}) }}">
-                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'action.edit_post'|trans }}
+                <i class="fa fa-edit" aria-hidden="true"></i> {{ 'Modifier'|trans }}
             </a>
         </div>
     {% endif %}
@@ -70,8 +71,6 @@
     {# the parent() function includes the contents defined by the parent template
       ('base.html.twig') for this block ('sidebar'). This is a very convenient way
       to share common contents in different templates #}
-    {{ parent() }}
 
-    {{ show_source_code(_self) }}
-    {{ include('blog/_rss.html.twig') }}
+  
 {% endblock %}

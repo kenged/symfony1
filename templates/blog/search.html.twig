@@ -16,7 +16,7 @@
                    autocomplete="off"
                    value="{{ query }}"
                    autofocus
-                   data-no-results-message="{{ 'post.search_no_results'|trans }}"
+                   data-no-results-message="{{ "Nada, j'ai rien trouvé sorry :( " }}"
             >
         </div>
     </form>
@@ -26,7 +26,5 @@
 {% endblock %}
 
 {% block sidebar %}
-    {{ parent() }}
-
-    {{ show_source_code(_self) }}
+    
 {% endblock %}
