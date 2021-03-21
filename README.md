@@ -8,4 +8,4 @@ pour la bdd vous la trouverez dans la racine du dossier sous le nom de db_cookwi
 
 
 
-j'ai galerer un peu avec la recherche surtout les filtres que j'ai pas pu le faire et aussi le diapo
+j'ai eu du mal un peu avec la recherche surtout les filtres que j'ai pas pu  faire et aussi le diapo
